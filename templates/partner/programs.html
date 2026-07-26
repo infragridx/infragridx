@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Partner Program | InfraGridX{% endblock %}
+
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-center animate-on-scroll">Partner Program</h1>
+        <p class="text-center text-muted mb-5 animate-on-scroll">Join our partner ecosystem and grow your business</p>
+        
+        <div class="row mb-5">
+            <div class="col-md-8 mx-auto text-center animate-on-scroll">
+                <div class="card bg-light border-0 shadow-sm p-4">
+                    <div class="card-body">
+                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                        <h3>Already a Partner?</h3>
+                        <p class="text-muted">Login to access your partner dashboard and manage your account.</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="{% url 'core:partner_login' %}" class="btn btn-primary">Login</a>
+                            <a href="{% url 'core:partner_register' %}" class="btn btn-outline-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 animate-on-scroll">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-handshake fa-2x text-primary mb-3"></i>
+                        <h4>Reseller Partner</h4>
+                        <p class="text-muted">Sell InfraGridX solutions and earn commissions on successful referrals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-code fa-2x text-primary mb-3"></i>
+                        <h4>Technology Partner</h4>
+                        <p class="text-muted">Integrate your technology with our platform and expand your reach.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-2x text-primary mb-3"></i>
+                        <h4>Solution Provider</h4>
+                        <p class="text-muted">Build and deliver solutions on top of our infrastructure for your clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 animate-on-scroll">
+            <a href="{% url 'core:partner_apply' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-paper-plane me-2"></i>Apply Now
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'core:home' %}">
+            <img src="{% static 'images/infragridx-logo.png' %}" alt="InfraGridX" height="50" class="d-inline-block align-top me-2">
+            <div class="brand-text d-none d-md-inline-block">
+                <span class="brand-name">InfraGridX</span>
+                <span class="brand-sub">TECHNOLOGIES PRIVATE LIMITED</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'core:home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'core:about' %}">About</a></li>
+                
+                <!-- Services Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        SERVICES <i class="fas fa-chevron-down ms-1"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-services" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="{% url 'core:services' %}">All Services</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'data-center-infrastructure-services' %}">Data Center Infrastructure</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'colocation-services' %}">Colocation Services</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'cloud-services' %}">Cloud Services</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'cyber-security' %}">Cyber Security</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'managed-servers' %}">Managed Servers</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'multi-cloud' %}">Multi Cloud</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'rims' %}">RIMS</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'noc' %}">NOC</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'soc' %}">SOC</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:service_detail' 'devops' %}">DevOps</a></li>
+                    </ul>
+                </li>
+
+                <!-- Solutions Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        SOLUTIONS <i class="fas fa-chevron-down ms-1"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-solutions" aria-labelledby="solutionsDropdown">
+                        <li><a class="dropdown-item" href="{% url 'core:solutions' %}">All Solutions</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'core:solution_detail' 'enterprise-solutions' %}">
+                            <strong>Enterprise Solutions</strong><br>
+                            <small class="text-muted">End-to-end IT infrastructure for large organizations</small>
+                        </a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:solution_detail' 'cloud-solutions' %}">
+                            <strong>Cloud Solutions</strong><br>
+                            <small class="text-muted">Scalable cloud migration and management services</small>
+                        </a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:solution_detail' 'security-solutions' %}">
+                            <strong>Security Solutions</strong><br>
+                            <small class="text-muted">Comprehensive cybersecurity and threat protection</small>
+                        </a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:solution_detail' 'infrastructure-solutions' %}">
+                            <strong>Infrastructure Solutions</strong><br>
+                            <small class="text-muted">Modern infrastructure design and deployment</small>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <!-- Pricing Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pricingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        PRICING <i class="fas fa-chevron-down ms-1"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-pricing" aria-labelledby="pricingDropdown">
+                        <li class="pricing-dropdown-content">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <h6 class="dropdown-header">Cloud Services</h6>
+                                    <ul class="list-unstyled">
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item" href="{% url 'core:pricing_private_cloud' %}">Private Cloud</a>
+                                            <ul class="dropdown-submenu-list">
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_private_cloud' %}">Private Cloud Solutions</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_private_cloud' %}">Dedicated Infrastructure</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_private_cloud' %}">Managed Private Cloud</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item" href="{% url 'core:pricing_public_cloud' %}">Public Cloud</a>
+                                            <ul class="dropdown-submenu-list">
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_aws' %}">AWS</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_azure' %}">Azure</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_google' %}">Google Cloud</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'core:pricing_oracle' %}">Oracle Cloud</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <h6 class="dropdown-header">Rent a Rack</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_full_rack' %}">Full Rack</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_half_rack' %}">Half Rack</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_quarter_rack' %}">Quarter Rack</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_custom_rack' %}">Custom Rack</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <h6 class="dropdown-header">Rent a Server</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_dedicated_server' %}">Dedicated Server</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_virtual_server' %}">Virtual Server</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_high_performance' %}">High Performance</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_storage_server' %}">Storage Server</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <h6 class="dropdown-header">Rent a GPU Server</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_a100' %}">NVIDIA A100</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_v100' %}">NVIDIA V100</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_t4' %}">NVIDIA T4</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'core:pricing_custom_gpu' %}">Custom GPU Config</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'core:blog' %}">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'core:careers' %}">Careers</a></li>
+
+                <!-- Partner Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="partnerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        PARTNER <i class="fas fa-chevron-down ms-1"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="partnerDropdown">
+                        <li><a class="dropdown-item" href="{% url 'core:partner_programs' %}">Partner Program</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'core:partner_register' %}">Register as Partner</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:partner_login' %}">Partner Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'core:partner_apply' %}">Apply Now</a></li>
+                    </ul>
+                </li>
+
+                <!-- Contact Button - Permanent Blue -->
+                <li class="nav-item">
+                    <a class="nav-link btn-contact" href="{% url 'core:contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-center mb-5 animate-on-scroll">Our Solutions</h1>
+        <p class="text-center text-muted mb-5 animate-on-scroll">Comprehensive IT solutions tailored to your business needs</p>
+        
+        <!-- Solutions Grid -->
+        <div class="row g-4">
+            {% for solution in solutions %}
+            <div class="col-md-6 animate-on-scroll">
+                <div class="solution-card h-100">
+                    <div class="solution-icon">
+                        {% if solution.title == "Enterprise Solutions" %}
+                            <i class="fas fa-building"></i>
+                        {% elif solution.title == "Cloud Solutions" %}
+                            <i class="fas fa-cloud"></i>
+                        {% elif solution.title == "Security Solutions" %}
+                            <i class="fas fa-shield-alt"></i>
+                        {% elif solution.title == "Infrastructure Solutions" %}
+                            <i class="fas fa-server"></i>
+                        {% else %}
+                            <i class="fas fa-lightbulb"></i>
+                        {% endif %}
+                    </div>
+                    <h4>{{ solution.title }}</h4>
+                    <p>{{ solution.description|truncatechars:150 }}</p>
+                    <div class="mt-3">
+                        <a href="{% url 'core:solution_detail' solution.slug %}" class="btn btn-outline-primary">
+                            Know More <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No solutions available.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

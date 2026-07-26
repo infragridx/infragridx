@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-center mb-5 animate-on-scroll">Our Services</h1>
+        <p class="text-center text-muted mb-5 animate-on-scroll">Comprehensive IT solutions tailored to your business needs</p>
+        
+        <!-- Services Grid -->
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-4 animate-on-scroll">
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="fas {{ service.icon }}"></i>
+                    </div>
+                    <h4>{{ service.name }}</h4>
+                    <p>{{ service.description|truncatechars:120 }}</p>
+                    <div class="mt-3">
+                        <a href="{% url 'core:service_detail' service.slug %}" class="btn btn-outline-primary">
+                            Know More <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No services available.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

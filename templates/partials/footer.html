@@ -1,0 +1,93 @@
+{% load static %}
+<footer style="background: linear-gradient(135deg, #0a1a3a 0%, #1a3a6a 100%); color: #ffffff; padding: 50px 0 30px; border-top: 4px solid #4a9eff; font-family: 'Inter', sans-serif;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Company Info -->
+            <div class="col-lg-4">
+                <h3 style="color: #ffffff !important; font-weight: 800; font-size: 1.8rem; letter-spacing: -0.5px; margin-bottom: 5px;">InfraGridX</h3>
+                <p style="color: #8ab4f8; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-top: 5px;">TECHNOLOGIES PRIVATE LIMITED</p>
+                <p style="color: #d0dce8; font-size: 0.95rem; line-height: 1.8; margin-top: 10px;">Enterprise IT infrastructure Solutions providing cutting-edge technology services.</p>
+                <div class="mt-3">
+                    <a href="#" style="background: rgba(255,255,255,0.1); color: #8ab4f8; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; margin-right: 8px; transition: all 0.3s; text-decoration: none; border: 1px solid rgba(138, 180, 248, 0.2);"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" style="background: rgba(255,255,255,0.1); color: #8ab4f8; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; margin-right: 8px; transition: all 0.3s; text-decoration: none; border: 1px solid rgba(138, 180, 248, 0.2);"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="background: rgba(255,255,255,0.1); color: #8ab4f8; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; margin-right: 8px; transition: all 0.3s; text-decoration: none; border: 1px solid rgba(138, 180, 248, 0.2);"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="background: rgba(255,255,255,0.1); color: #8ab4f8; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; margin-right: 8px; transition: all 0.3s; text-decoration: none; border: 1px solid rgba(138, 180, 248, 0.2);"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Services -->
+            <div class="col-lg-2">
+                <h5 style="color: #ffffff !important; font-weight: 700; margin-bottom: 1.2rem; font-size: 1rem; letter-spacing: 0.5px;">Services</h5>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:services' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Cloud Services</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:services' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Cyber Security</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:services' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Data Center</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:services' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">DevOps</a></li>
+                </ul>
+            </div>
+            
+            <!-- Company -->
+            <div class="col-lg-2">
+                <h5 style="color: #ffffff !important; font-weight: 700; margin-bottom: 1.2rem; font-size: 1rem; letter-spacing: 0.5px;">Company</h5>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:about' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">About Us</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:careers' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Careers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:blog' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Blog</a></li>
+                    <li style="margin-bottom: 10px;"><a href="{% url 'core:contact' %}" style="color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.95rem;">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <h5 style="color: #ffffff !important; font-weight: 700; margin-bottom: 1.2rem; font-size: 1rem; letter-spacing: 0.5px;">Contact Info</h5>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 14px; color: #b0c4de; display: flex; align-items: flex-start; font-size: 0.95rem;">
+                        <i class="fas fa-map-marker-alt me-3 mt-1" style="color: #4a9eff; font-size: 1.1rem;"></i>
+                        <span>Dr.No: 70-11-72, Srinivasa Nagar,<br>Patamata, Vijayawada - 520010</span>
+                    </li>
+                    <li style="margin-bottom: 14px; color: #b0c4de; font-size: 0.95rem;">
+                        <i class="fas fa-phone me-3" style="color: #4a9eff; font-size: 1.1rem;"></i>
+                        +91-9703732345
+                    </li>
+                    <li style="margin-bottom: 14px; color: #b0c4de; font-size: 0.95rem;">
+                        <i class="fas fa-envelope me-3" style="color: #4a9eff; font-size: 1.1rem;"></i>
+                        info@infragridx.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr style="border-color: rgba(255,255,255,0.1); margin-top: 30px; margin-bottom: 20px;">
+        
+        <div style="text-align: center;">
+            <small style="color: #8ab4f8; opacity: 0.8; font-size: 0.85rem;">&copy; 2026 InfraGridX Technologies Private Limited. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Hover Effects */
+    footer a:hover {
+        color: #4a9eff !important;
+        transform: translateX(3px);
+    }
+    footer .footer-social a:hover {
+        background: rgba(74, 158, 255, 0.2) !important;
+        transform: translateY(-3px) !important;
+        border-color: #4a9eff !important;
+        color: #ffffff !important;
+    }
+    footer .list-unstyled a {
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    footer .list-unstyled a:hover {
+        transform: translateX(5px);
+    }
+    /* Force white color for InfraGridX */
+    .footer h3,
+    .footer .display-4,
+    .footer .brand-name {
+        color: #ffffff !important;
+    }
+</style>

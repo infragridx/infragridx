@@ -24,6 +24,11 @@ media/
 staticfiles/
 static/
 
+# Environment
+.env
+.env.local
+.env.*.local
+
 # IDE
 .vscode/
 .idea/
@@ -31,16 +36,11 @@ static/
 *.swo
 *~
 
-# Environment
-.env
-.env.local
-.env.*.local
-
 # OS
 .DS_Store
 Thumbs.db
 
-# Backup files
+# Backup
 *.bak
 *.backup
 backup_*.tar.gz

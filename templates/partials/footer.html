@@ -1,0 +1,53 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <!-- Logo in Footer -->
+                <img src="{% static 'images/infragridx-logo.png' %}" 
+                     alt="InfraGridX" 
+                     height="45" 
+                     class="mb-2">
+                <h5 class="text-white mt-2">InfraGridX</h5>
+                <p class="small text-white-50">TECHNOLOGIES PRIVATE LIMITED</p>
+                <p class="text-white-50">Enterprise IT Infrastructure Solutions providing cutting-edge technology services.</p>
+                <div class="footer-social mt-3">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'core:services' %}">Cloud Services</a></li>
+                    <li><a href="{% url 'core:services' %}">Cyber Security</a></li>
+                    <li><a href="{% url 'core:services' %}">Data Center</a></li>
+                    <li><a href="{% url 'core:services' %}">DevOps</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'core:about' %}">About Us</a></li>
+                    <li><a href="{% url 'core:careers' %}">Careers</a></li>
+                    <li><a href="{% url 'core:blog' %}">Blog</a></li>
+                    <li><a href="{% url 'core:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5>Contact Info</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i>Dr.No: 70-11-72, Srinivasa Nagar, Patamata, Vijayawada - 520010</li>
+                    <li><i class="fas fa-phone me-2"></i>+91-9703732345</li>
+                    <li><i class="fas fa-envelope me-2"></i>info@infragridx.com</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+            <small>&copy; 2024 InfraGridX Technologies Private Limited. All rights reserved.</small>
+        </div>
+    </div>
+</footer>

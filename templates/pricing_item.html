@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ item|title }} | InfraGridX Pricing{% endblock %}
+
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="animate-on-scroll">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'core:pricing' %}">Pricing</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'core:pricing_cloud' %}">{{ category|title }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ item|title }}</li>
+            </ol>
+        </nav>
+
+        <div class="row animate-on-scroll">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">{{ item|title }}</h1>
+                <p class="lead">Detailed pricing for {{ item|title }}</p>
+                
+                <div class="card shadow-sm mt-4">
+                    <div class="card-body">
+                        <h5>Coming Soon</h5>
+                        <p class="text-muted">Detailed pricing information for {{ item|title }} will be available shortly.</p>
+                        <p>For immediate assistance, please contact our sales team.</p>
+                        <a href="{% url 'core:contact' %}" class="btn btn-primary">
+                            <i class="fas fa-envelope me-2"></i>Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5>Related Services</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'core:pricing_cloud' %}">Cloud Services</a></li>
+                            <li><a href="{% url 'core:pricing_rack' %}">Rent a Rack</a></li>
+                            <li><a href="{% url 'core:pricing_server' %}">Rent a Server</a></li>
+                            <li><a href="{% url 'core:pricing_gpu' %}">Rent a GPU</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

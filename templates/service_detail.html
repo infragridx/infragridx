@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.name }} | InfraGridX{% endblock %}
+
+{% block meta_description %}{{ service.description|truncatechars:160 }}{% endblock %}
+
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="animate-on-scroll">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'core:services' %}">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ service.name }}</li>
+            </ol>
+        </nav>
+
+        <!-- Service Header -->
+        <div class="row mb-5 animate-on-scroll">
+            <div class="col-lg-8">
+                <div class="service-icon-large mb-3">
+                    <i class="fas {{ service.icon }} fa-3x text-primary"></i>
+                </div>
+                <h1 class="display-4 fw-bold">{{ service.name }}</h1>
+                <p class="lead">{{ service.description }}</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Get a Quote
+                </a>
+            </div>
+        </div>
+
+        <!-- Service Content -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-content animate-on-scroll">
+                    {% if service.full_description %}
+                        {{ service.full_description|safe }}
+                    {% else %}
+                        <h4>About {{ service.name }}</h4>
+                        <p>{{ service.description }}</p>
+                        
+                        <h5 class="mt-4">Key Features</h5>
+                        <ul>
+                            <li>Enterprise-grade infrastructure</li>
+                            <li>24/7 monitoring and support</li>
+                            <li>Scalable solutions</li>
+                            <li>Industry-leading security</li>
+                            <li>Cost-effective pricing</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">Benefits</h5>
+                        <ul>
+                            <li>Improved operational efficiency</li>
+                            <li>Reduced downtime</li>
+                            <li>Enhanced security posture</li>
+                            <li>Expert technical support</li>
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <!-- Related Services -->
+                <div class="mt-5 pt-3 border-top">
+                    <h4>Other Services</h4>
+                    <div class="row g-3 mt-2">
+                        {% for related in service.get_related_services %}
+                        <div class="col-md-4">
+                            <a href="{% url 'core:service_detail' related.slug %}" class="text-decoration-none">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas {{ related.icon }} fa-2x text-primary mb-2"></i>
+                                        <h6 class="card-title">{{ related.name }}</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% empty %}
+                        <div class="col-12">
+                            <p class="text-muted">Explore our other services</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Quick Contact -->
+                <div class="card shadow-sm animate-on-scroll">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-headset me-2 text-primary"></i>Need Help?</h5>
+                        <p class="card-text">Contact our experts for more information about {{ service.name }}.</p>
+                        <a href="{% url 'core:contact' %}" class="btn btn-primary w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="card shadow-sm mt-4 animate-on-scroll">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-phone me-2 text-primary"></i>Contact Info</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                Dr.No: 70-11-72, Srinivasa Nagar,<br>Patamata, Vijayawada - 520010
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-phone text-primary me-2"></i>
+                                +91-9703732345
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                info@infragridx.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Features -->
+                <div class="card shadow-sm mt-4 animate-on-scroll">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-check-circle text-primary me-2"></i>Why Choose Us?</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Expert Team</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>24/7 Support</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Scalable Solutions</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Secure Infrastructure</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Competitive Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

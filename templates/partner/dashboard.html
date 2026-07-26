@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Partner Dashboard | InfraGridX{% endblock %}
+
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 animate-on-scroll">
+                <h1 class="display-4 fw-bold">Partner Dashboard</h1>
+                <p class="text-muted">Welcome back, {{ user.username }}!</p>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-3 animate-on-scroll">
+                <div class="card bg-primary text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-building fa-2x mb-2"></i>
+                        <h5>Company</h5>
+                        <p>{{ partner.company_name }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 animate-on-scroll">
+                <div class="card bg-success text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-check-circle fa-2x mb-2"></i>
+                        <h5>Status</h5>
+                        <p>
+                            {% if is_approved %}
+                                <span class="badge bg-light text-success">✅ Active</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark">⏳ Pending</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 animate-on-scroll">
+                <div class="card bg-info text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-2x mb-2"></i>
+                        <h5>Partner Type</h5>
+                        <p>{{ partner.get_partner_type_display }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 animate-on-scroll">
+                <div class="card bg-warning text-dark">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar fa-2x mb-2"></i>
+                        <h5>Member Since</h5>
+                        <p>{{ partner.created_at|date:"M d, Y" }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4 animate-on-scroll">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a href="{% url 'core:partner_profile' %}" class="btn btn-outline-primary">
+                                <i class="fas fa-user-edit me-2"></i>Update Profile
+                            </a>
+                            <a href="#" class="btn btn-outline-success">
+                                <i class="fas fa-file-invoice me-2"></i>View Reports
+                            </a>
+                            <a href="{% url 'core:partner_logout' %}" class="btn btn-outline-danger">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Partner Benefits</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Exclusive partner pricing</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Technical training & support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Marketing materials</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Dedicated account manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
